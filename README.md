@@ -12,6 +12,21 @@
 
 *Seminars of interest*: Statistics seminar, Tuesdays 4:30PM, Sequoia Hall room 200 (refreshments provided in room 100 at 4PM).
 
+*General instructions*: 
+The main components will be reading papers, using in R with many graphics and simulations, and the analysis of real data. You can work on adapting a statistical method to analyze some data in order to answer a scientific question, develop statistical methodology to answer a scientific question or explore the statistical properties of existent methods.
+
+You are expected to start working on your ﬁnal report from the start, so that you have a complete ﬁnal document when your research time is over (and not afterwards), so keep completing your report every week.
+
+Keep an R-Markdown document or Jupyter notebook with your code and comment your code. Keep an updated git repository with your information. We will talk about this on June 29.
+
+*Expectations*:
+Thursday June 29, you will present you project proposal. You will describe the question(s) you want to answer and how you plan to answer it.
+
+give two oral presentations
+¥	provide useful sets of R functions (if not a package) that will enable anyone to reproduce your work
+¥	analyze some real data set with your methodology
+¥	provide a publishable paper at the end.
+
 
 *Schedule* (Open an issue if you want to suggest a paper to read):
 
