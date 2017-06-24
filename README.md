@@ -36,7 +36,7 @@ Part of our summer research will involve reading and discussing some scientific 
 
 | Date | Link to paper | Reader | Description
 |------|--------------|-----------|-----------|
-| April 11 | [Ancient X chromosomes reveal contrasting sex bias in Neolithic and Bronze Age Eurasian migrations](http://www.pnas.org/content/114/10/2657.abstract.html)| Amy |
+| June 26 | [Methods and models for unravelling human evolutionary history ](https://www.nature.com/nrg/journal/v16/n12/full/nrg4005.html)| All | It will be discussed on Thursday June 29
 | April 18 | [Nuclear and mitochondrial DNA sequences from two Denisovan individuals](http://www.pnas.org/content/112/51/15696.full.pdf)| Julia |
 | April 25 |[Punctuated bursts in human male demography inferred from 1,244 worldwide Y-chromosome sequences](http://www.nature.com/ng/journal/v48/n6/full/ng.3559.html)| Joey |
 | May 2 | [Genomic insights into the origin of farming in the ancient Near East](http://www.nature.com/nature/journal/v536/n7617/abs/nature19310.html)| Mamie |
