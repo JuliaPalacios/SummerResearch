@@ -14,6 +14,10 @@
 *Schedule* (Open an issue if you want to suggest a paper to read):
 
 # Journal reading
+
+Part of our summer research will involve reading and discussing some scientific papers. I want to emphasize the importance of being a scholar. I ask you to read at least two papers a week, some of them will be discussed during group meetings and some will be uniquely relevant for your projects. When you finish reading your paper, write a short summary of your findings and annotate them here under Description. Please edit this list as needed.
+
+
 | Date | Link to paper | Reader | Description
 |------|--------------|-----------|-----------|
 | April 11 | [Ancient X chromosomes reveal contrasting sex bias in Neolithic and Bronze Age Eurasian migrations](http://www.pnas.org/content/114/10/2657.abstract.html)| Amy |
