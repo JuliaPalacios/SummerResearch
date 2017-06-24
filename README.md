@@ -2,7 +2,9 @@
 
 *Instructor*: Julia Palacios, Sequoia Hall 141
 
-*Time*: Thursday, 11:00 am - 12:00 pm
+*Group meetings*: Thursday, 11:00 am - 12:00 pm
+
+*Individual meetings*: Monday
 
 *Location*: TBC
 
