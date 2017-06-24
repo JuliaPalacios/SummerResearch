@@ -1,4 +1,4 @@
-# Undergraduate Summer Research in Statistics 2017
+# Undergraduate Summer Research in Statistics 2017, June 26 - September 1
 
 *Instructor*: Julia Palacios, Sequoia Hall 141
 
@@ -20,15 +20,13 @@ You are expected to start working on your ﬁnal report from the start, so that
 Keep an R-Markdown document or Jupyter notebook with your code and comment your code. Keep an updated git repository with your information. We will talk about this on June 29.
 
 *Expectations*:
-Thursday June 29, you will present you project proposal. You will describe the question(s) you want to answer and how you plan to answer it.
+Thursday June 29, you will present your project proposal in 10 minutes. You will describe the questions you want to answer and how you plan to answer them. You will also have a list of references you will read during the summer program.
 
-give two oral presentations
-¥	provide useful sets of R functions (if not a package) that will enable anyone to reproduce your work
-¥	analyze some real data set with your methodology
-¥	provide a publishable paper at the end.
+Give two oral presentations, the first presentation of 20 minutes will be on Thursday July 20 about your progress and your final presentation of 40 minutes will be on Thursday August 31. 
 
+Your first complete draft is due on August 25 and your final publishable paper is due on September 1st.
+You are expected to provide a publishable paper at the end.
 
-*Schedule* (Open an issue if you want to suggest a paper to read):
 
 # Journal reading
 
