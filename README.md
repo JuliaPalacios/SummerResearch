@@ -1,4 +1,5 @@
-# Undergraduate Summer Research in Statistics 2017, June 26 - September 1
+# Undergraduate Summer Research in Statistics 2017, 
+June 26 - September 1
 
 *Instructor*: Julia Palacios, Sequoia Hall 141
 
