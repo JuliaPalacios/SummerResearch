@@ -26,7 +26,7 @@ Thursday June 29, you will present your project proposal in 10 minutes. You will
 Give two oral presentations, the first presentation of 20 minutes will be on Thursday July 20 about your progress and your final presentation of 40 minutes will be on Thursday August 31. 
 
 Your first complete draft is due on August 25 and your final publishable paper is due on September 1st.
-You are expected to provide a publishable paper at the end.
+
 
 
 # Journal reading
