@@ -1,8 +1,14 @@
-# Journal Club Spring 2017
+# Undergraduate Summer Research in Statistics 2017
 
-*Time*: Tuesdays, 2:00 pm - 3:00 pm
+*Instructor*: Julia Palacios, Sequoia Hall 141
 
-*Location*: Sequoia Hall 207
+*Time*: Thursday, 11:00 am - 12:00 pm
+
+*Location*: TBC
+
+*Logistics*: We will have group meetings every Thursday and individual meetings every Monday. You are expected to show progress in every meeting.
+
+*Seminars of interest*: Statistics seminar, Tuesdays 4:30PM, Sequoia Hall room 200 (refreshments provided in room 100 at 4PM).
 
 Observed variation between human ancient DNA samples and modern DNA samples provides clues about adaptation to different environments and complex human history, including sex-biased history. Statistical analyses of ancient DNA samples are particularly challenging because of sample availability, sample contamination and dating uncertainty. Modern sequencing technology, recent excavations and coffin burials have increased ancient DNA availability in the last five years. The aim of this journal club is to learn about available data sets and to increase our understanding of human history discovered from DNA variation.
 
