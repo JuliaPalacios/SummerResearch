@@ -7,7 +7,7 @@ June 26 - September 1
 
 *Individual meetings*: Monday
 
-*Location*: TBC
+*Location*: Sequoia Hall 207
 
 *Logistics*: We will have group meetings every Thursday and individual meetings every Monday. You are expected to show progress in every meeting.
 
