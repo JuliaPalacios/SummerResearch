@@ -41,6 +41,11 @@ Part of our summer research will involve reading and discussing some scientific 
 | July 6  | [FastTree](https://academic.oup.com/mbe/article/26/7/1641/1128976/FastTree-Computing-Large-Minimum-Evolution-Trees)| All | |
 | July 13 | [An expanded view of complex traits](http://www.cell.com/cell/abstract/S0092-8674(17)30629-3)| All | |
 | July 20 | [Impacts of Neanderthal-Introgressed Sequences on the Landscape of Human Gene Expression](http://www.cell.com/cell/fulltext/S0092-8674(17)30128-9)| All | |
+| TBD   | [Topological metrizations of trees, and new quartet methods of tree inference](https://arxiv.org/abs/1704.02004) | Alan | Using different metrizations to design new phylogenetic inference methods |
+| TBD   | [Frequency spectrum neutrality tests: one for all and all for one](https://doi.org/10.1534/genetics.109.104042) | Alan | Generalizing SFS-based statistical estimators of mutation rates and measures of neutrality |
+| TBD   | [Neutrality tests for sequences with missing data](https://doi.org/10.1534/genetics.112.139949) | Alan | SFS-based statistical estimators for incomplete genetic data |
+| TBD   | [Optimal neutrality tests based on the frequency spectrum](https://doi.org/10.1534/genetics.110.118570) | Alan | Finding optimal neutrality tests against a chosen alternative evolutionary hypothesis |
+| TBD   | [Fundamental limits on the accuracy of demographic inference based on the sample frequency spectrum](https://doi.org/10.1073/pnas.1503717112) | Alan | Information-theoretic error bound on distance between population growth function and its estimator, and slow convergence of estimators |
 
 Put yourself on the calendar like this:
 ```
