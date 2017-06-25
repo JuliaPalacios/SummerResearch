@@ -21,7 +21,7 @@ You are expected to start working on your ﬁnal report from the start, so that
 Keep an R-Markdown document or Jupyter notebook with your code and comment your code. Keep an updated git repository with your information. We will talk about this on June 29.
 
 *Expectations*:
-Thursday June 29, you will present your project proposal in 10 minutes. You will describe the questions you want to answer and how you plan to answer them. You will also have a list of references you will read during the summer program.
+You will present your project proposal on June 29 in 10 minutes. You will describe the questions you want to answer and how you plan to answer them. You will also have a list of references you will read during the summer program.
 
 Give two oral presentations, the first presentation of 20 minutes will be on Thursday July 20 about your progress and your final presentation of 40 minutes will be on Thursday August 31. 
 
