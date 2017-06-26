@@ -38,6 +38,7 @@ Part of our summer research will involve reading and discussing some scientific 
 |------|--------------|-----------|-----------|
 | June 26 | [Methods and models for unravelling human evolutionary history ](https://www.nature.com/nrg/journal/v16/n12/full/nrg4005.html)| All | It will be discussed on Thursday June 29|
 | June 27 | [A metric on phylogenetic tree shapes](http://biorxiv.org/content/early/2017/02/09/054544)| Julia | |
+| June 28 | [Stochastic enumeration method for counting trees](https://people.smp.uq.edu.au/DirkKroese/ps/tree-counting.pdf)| Julia | |
 | July 6  | [FastTree](https://academic.oup.com/mbe/article/26/7/1641/1128976/FastTree-Computing-Large-Minimum-Evolution-Trees)| All | |
 | July 13 | [An expanded view of complex traits](http://www.cell.com/cell/abstract/S0092-8674(17)30629-3)| All | |
 | July 20 | [Impacts of Neanderthal-Introgressed Sequences on the Landscape of Human Gene Expression](http://www.cell.com/cell/fulltext/S0092-8674(17)30128-9)| All | |
