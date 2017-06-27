@@ -36,7 +36,7 @@ Part of our summer research will involve reading and discussing some scientific 
 
 | Date | Link to paper | Reader | Description
 |------|--------------|-----------|-----------|
-| June 26 | [Methods and models for unravelling human evolutionary history ](https://www.nature.com/nrg/journal/v16/n12/full/nrg4005.html)| All | It will be discussed on Thursday June 29|
+| June 26 | [Methods and models for unravelling human evolutionary history ](https://www.nature.com/nrg/journal/v16/n12/full/nrg4005.html)| All | It will be discussed on Thursday June 29. It presents a high level overview of methods in population genetics. It does not cover all methods out there.|
 | June 27 | [A metric on phylogenetic tree shapes](http://biorxiv.org/content/early/2017/02/09/054544)| Julia | |
 | June 28 | [Stochastic enumeration method for counting trees](https://people.smp.uq.edu.au/DirkKroese/ps/tree-counting.pdf)| Julia | |
 | June 29 | [The ratio of human X chromosome to autosome diversity..](http://www.nature.com/ng/journal/v42/n10/full/ng.651.html)|Julia||
