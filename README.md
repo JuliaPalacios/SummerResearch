@@ -39,7 +39,8 @@ Part of our summer research will involve reading and discussing some scientific 
 | June 26 | [Methods and models for unravelling human evolutionary history ](https://www.nature.com/nrg/journal/v16/n12/full/nrg4005.html)| All | It will be discussed on Thursday June 29. It presents a high level overview of methods in population genetics. It does not cover all methods out there.|
 | June 27 | [A metric on phylogenetic tree shapes](http://biorxiv.org/content/early/2017/02/09/054544)| Julia |Given a tree shape, the authors propose a labeling scheme of internal nodes traversing the tree from tips to root such that the label of the root uniquely identifies the tree shape. With this single "number" they construct different metrics and define addition and multiplication of tree shapes with different mappings. This labeling scheme can be useful for counting ranked tree shapes that are compatible with the data. Not clear how to "adjust" for the ranking or if ranking can come as a second step in the counting |
 | June 28 | [Chapter 1. Fast Sequential Monte Carlo Methods by Rubinstein et al.]| Julia | Just introductory chapter |
-| June 29 | [Stochastic enumeration method for counting trees](https://people.smp.uq.edu.au/DirkKroese/ps/tree-counting.pdf)| Julia | |
+| June 29 | [Empirical Bayesian analysis of simultaneous changepoints in multiple data sequences](https://arxiv.org/abs/1508.01280)|Julia||
+| June 30 | [Stochastic enumeration method for counting trees](https://people.smp.uq.edu.au/DirkKroese/ps/tree-counting.pdf)| Julia | |
 | June 30 | [The ratio of human X chromosome to autosome diversity..](http://www.nature.com/ng/journal/v42/n10/full/ng.651.html)|Julia||
 | June 30 | [Analyses of X-linked and autosomal..](http://www.nature.com/ng/journal/v43/n8/full/ng.877.html)| Julia | |
 | July 6  | [FastTree](https://academic.oup.com/mbe/article/26/7/1641/1128976/FastTree-Computing-Large-Minimum-Evolution-Trees)| All | |
