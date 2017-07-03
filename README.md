@@ -46,19 +46,20 @@ Part of our summer research will involve reading and discussing some scientific 
 | June 28 | [Integrated Nested Laplace Approximation for Bayesian Nonparametric Phylodynamics](https://arxiv.org/abs/1210.4908) | Rayne | Improves upon the previous method of estimating the effective population size trajectory  using  INLA instead of MCMC. This improves both accuracy and computational efficiency of the previous method|
 | June 29 | [Importance Sampling for the Infinite Sites Model](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2832804/pdf/nihms164971.pdf)|Julia|They used the Griffiths and Tavare mtDNA for testing another importance sampling method for inferring theta under the infinite sites mutation model.|
 | June 29 | [Empirical Bayesian analysis of simultaneous changepoints in multiple data sequences](https://arxiv.org/abs/1508.01280)|Julia|An example of MCEM for Empirical Bayes estimation of hyperparameters in the multiple changepoints setting. The Metropolis-Hastings algorithm is very original and tailored to this problem. It exploits a dynamic programming way of computing and sampling from the full posterior distribution|
-| June 30 | [Stochastic enumeration method for counting trees](https://people.smp.uq.edu.au/DirkKroese/ps/tree-counting.pdf)| Julia | |
-| June 30 | [The ratio of human X chromosome to autosome diversity..](http://www.nature.com/ng/journal/v42/n10/full/ng.651.html)|Julia||
-| June 30 | [Analyses of X-linked and autosomal..](http://www.nature.com/ng/journal/v43/n8/full/ng.877.html)| Julia | |
+| July 3 | [Stochastic enumeration method for counting trees](https://people.smp.uq.edu.au/DirkKroese/ps/tree-counting.pdf)| Julia | |
 | July 6 | [Optimal neutrality tests based on the frequency spectrum](https://doi.org/10.1534/genetics.110.118570) | All | Building on (Achaz, 2009), paper proposes choosing weights based on fractional frequencies instead of usual frequencies, and also shows how a most optimal test can be to test against an alternative evolutionary hypothesis |
-| xx  | [FastTree](https://academic.oup.com/mbe/article/26/7/1641/1128976/FastTree-Computing-Large-Minimum-Evolution-Trees)| All | |
-| July 13 | [An expanded view of complex traits](http://www.cell.com/cell/abstract/S0092-8674(17)30629-3)| All | |
-| July 20 | [Impacts of Neanderthal-Introgressed Sequences on the Landscape of Human Gene Expression](http://www.cell.com/cell/fulltext/S0092-8674(17)30128-9)| All | |
+| TBD  | [FastTree](https://academic.oup.com/mbe/article/26/7/1641/1128976/FastTree-Computing-Large-Minimum-Evolution-Trees)| All | |
+| TBD | [An expanded view of complex traits](http://www.cell.com/cell/abstract/S0092-8674(17)30629-3)| All | |
+| TBD | [Impacts of Neanderthal-Introgressed Sequences on the Landscape of Human Gene Expression](http://www.cell.com/cell/fulltext/S0092-8674(17)30128-9)| All | |
 | TBD   | [Topological metrizations of trees, and new quartet methods of tree inference](https://arxiv.org/abs/1704.02004) | Alan | Using different metrizations to design new phylogenetic inference methods |
 | TBD   | [A generalized Watterson estimator for next-generation sequencing: From trios to autopolyploids](https://doi.org/10.1016/j.tpb.2015.01.001) | Alan | Uniting new NGS-based estimators proposed previously (see first section) via a common mathematical framework |
 | TBD   | [Population genetic analysis of shotgun assemblies of genomic sequences from multiple individuals](https://doi.org/10.1101/gr.074187.107) | Alan | Introducing method for obtaining estimators of nucleotide diversity \theta from shotgun sequencing data |
 | TBD   | [Population genomics from pool sequencing](https://doi.org/10.1111/mec.12522) | Alan | Formulating estimators of summary statistics for data arising from NGS of pooled samples |
 | TBD   | [Neutrality tests for sequences with missing data](https://doi.org/10.1534/genetics.112.139949) | Alan | SFS-based statistical estimators for incomplete genetic data |
 | TBD   | [Fundamental limits on the accuracy of demographic inference based on the sample frequency spectrum](https://doi.org/10.1073/pnas.1503717112) | Alan | Information-theoretic error bound on distance between population growth function and its estimator, and slow convergence of estimators |
+| TBD | [The ratio of human X chromosome to autosome diversity..](http://www.nature.com/ng/journal/v42/n10/full/ng.651.html)|Julia||
+| TBD | [Analyses of X-linked and autosomal..](http://www.nature.com/ng/journal/v43/n8/full/ng.877.html)| Julia | |
+
 
 Put yourself on the calendar like this:
 ```
