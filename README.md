@@ -61,6 +61,7 @@ Part of our summer research will involve reading and discussing some scientific 
 | TBD   | [Fundamental limits on the accuracy of demographic inference based on the sample frequency spectrum](https://doi.org/10.1073/pnas.1503717112) | Alan | Information-theoretic error bound on distance between population growth function and its estimator, and slow convergence of estimators |
 | TBD | [The ratio of human X chromosome to autosome diversity..](http://www.nature.com/ng/journal/v42/n10/full/ng.651.html)|Julia||
 | TBD | [Analyses of X-linked and autosomal..](http://www.nature.com/ng/journal/v43/n8/full/ng.877.html)| Julia | |
+| TBD |[Ascertainment bias in studies of human genome-wide polymorphism](http://genome.cshlp.org/content/15/11/1496.full.pdf+html)|Alan||
 
 
 Put yourself on the calendar like this:
