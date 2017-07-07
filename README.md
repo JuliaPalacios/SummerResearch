@@ -49,6 +49,7 @@ Part of our summer research will involve reading and discussing some scientific 
 | July 3 | [Stochastic enumeration method for counting trees](https://people.smp.uq.edu.au/DirkKroese/ps/tree-counting.pdf)| Julia | |
 | July 4 | [Footprints of ancient-balanced polymorphisms in genetic variation data from closely related species](http://onlinelibrary.wiley.com/doi/10.1111/evo.12567/epdf)|Julia|They derive approximations to the distribution of some statistics that are indicators of trans-species polymorphism (and signature of balancing selection)--reading incomplete. |
 | July 6 | [Optimal neutrality tests based on the frequency spectrum](https://doi.org/10.1534/genetics.110.118570) | All | Building on (Achaz, 2009), paper proposes choosing weights based on fractional frequencies instead of usual frequencies, and also shows how a most optimal test can be to test against an alternative evolutionary hypothesis |
+| July 6 |[Phylogenetic MCMC Algorithms Are Misleading on Mixtures of Trees](https://pdfs.semanticscholar.org/bcaf/fce47bdda89be7501c796db8ae00f8e7aed3.pdf)|Julia||
 | July 7 | [Non-parametric estimation of population size changes from the site frequency spectrum](http://www.biorxiv.org/content/biorxiv/early/2017/05/02/125351.full.pdf)|Julia||
 | July 13  | [FastTree](https://academic.oup.com/mbe/article/26/7/1641/1128976/FastTree-Computing-Large-Minimum-Evolution-Trees)| All | |
 | TBD | [An expanded view of complex traits](http://www.cell.com/cell/abstract/S0092-8674(17)30629-3)| All | |
