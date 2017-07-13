@@ -1,0 +1,180 @@
+\documentclass[lettersize, 10pt]{article}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+
+%Theorem Declarations
+\newtheorem{thm}{Theorem}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{lm}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{con}[thm]{Conjecture}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\indep}{\rotatebox[origin=c]{90}{$\models$}}
+
+\begin{document}
+%Header-Make sure you update this information!!!!
+\noindent
+\large{\bfseries{\sffamily Summer Statistics Research}} \hfill {\bfseries{\sffamily Alan Aw}} \\
+\normalsize Week 3 Update \hfill \texttt{alanaw1@stanford.edu} \\
+Supervisor: Julia Palacios \hfill Date: July 12, 2017\\
+Co-supervisor: Noah Rosenberg
+
+\section*{Introduction}
+
+In population genetics, standard models provide null models against which statistical tests for neutrality can be performed. Under the infinite sites Wright-Fisher model, the scaled mutation rate $\theta=2pN_e \mu$ --- where $\mu$ is the mutation rate for the locus, $N_e$ is the effective population size and $p$ is the ploidy number of the cell --- forms the basis of statistical tests for neutrality in a locus undergoing evolution. These statistical tests rely on the frequency spectrum of a collection of genetic samples, which is an important summary statistic that can be used to infer mutation rates and population size dynamics in parametric inference, or to test for neutrality in the case of categorical inference. While classical tests such as Tajima's $D$, Fu and Li's $F$ and Fay and Wu's $H$ have been used widely in testing alternative hypotheses regarding the evolutionary history of genetic data, much discussion continues to surround the inaccuracies of such tests based on genomic datasets arising from next generation sequencing (NGS). Errors from ascertainment biases in SNP calling \cite{Clark2005}, low sequencing depth \cite{Korneliussen2013} and sequence pooling \cite{Ferretti2013} can result in underestimation of nucleotide polymorphisms that appear in very low frequencies in a sample. On the other hand, the statistical power of classical tests turns out not to be optimal in all scenarios: a simulation study and theoretical approach \cite{Ferretti2010} showed that each of the classical tests has a specific frequency spectrum for which it is most powerful, and for other frequency spectra there are optimal difference statistic tests that maximize the statistical power. 
+
+Recent studies on the mathematical properties of population genetic statistics have shown that many summary statistics --- including $F_{ST}$ \cite{Alcala2017,Jakobsson2013}, homozygosity \cite{Reddy2012,Rosenberg2008} and its derived statistics \cite{Garud2015} --- are constrained both by closely related statistics and parameters of the data, so that values of the latter quantities restrict the range of values that the summary statistic can take. These results provide guidance to the usage and interpretation of summary statistics in population genetic studies, by clarifying observations about the behavior of summary statistics with regard to population parameters (e.g., \cite{Alcala2017}) or with respect to other statistics (e.g., \cite{Rosenberg2008}). Moreover, at times they lead to novel empirical insights (e.g., \cite{Garud2015}). 
+
+In this paper, we interrogate the usefulness of studying mathematical properties of neutrality test statistics and estimators of mutation rates in the infinite sites model. We illustrate how mathematical bounds between neutrality test statistics and components of the frequency spectrum can constrain the range of values for which the test statistic can take. We apply these mathematical bounds to both real data as well as frequency spectra simulated from evolutionary models. Our study not only contributes to the development of a robust statistical framework for neutrality tests based on the frequency spectrum for NGS data, but also advances mathematical approaches to the study of population genetic statistics. 
+
+\section*{Theory}
+
+Throughout this paper, we let $a_n=\sum_{i=1}^{n-1} 1/i$ denote the $(n-1)$th partial sum of the harmonic series and $A_n=\sum_{i=1}^{n-1} 1/i^2$ denote the sum of squares of the first $n-1$ positive integers. Let $\Delta_n:=\{\mathbf{x}\in\mathbb{R}^{n}:x_i\geqslant 0, \sum_{i} x_i=1\}$ denote the $(n-1)$-dimensional probability simplex. In a population of $p$-ploids evolving neutrally according to the infinite sites model, the population-scaled mutation rate (sometimes referred to as nucleotide diversity) $\theta=2pN_e\mu$ admits a family of unbiased estimators based on the frequency spectrum, which is given by
+\begin{equation}
+\hat{\theta}_\omega = \sum_{i=1}^{n-1}\omega_i i\xi_i, \label{achaz2009-1}
+\end{equation}
+where $(\omega_1,\ldots,\omega_{n-1})\in \Delta_{n-1}$. Each estimator of the form given in eq.~(\ref{achaz2009-1}) is indeed unbiased, since under the infinite sites model $E[\xi_i] = \theta/i$ and $\hat{\theta}_\omega$ is a linear combination of weights summing to $1$. Note that $\sum_{i=1}^{n-1}\xi_i=S_n$, the number of segregating sites corresponding to the frequency spectrum. 
+
+Given any two choice of weights $\omega_1 = (\omega_{11},\ldots,\omega_{1(n-1)})$ and $\omega_2 = (\omega_{21},\ldots,\omega_{2(n-1)})$, we can define the normalized difference statistic $T_\Omega$ as the difference between two unbiased $\theta$-estimators $\hat{\theta}_{\omega_1}$ and $\hat{\theta}_{\omega_2}$.
+\begin{equation}
+T_\Omega=\frac{\hat{\theta}_{\omega_1}-\hat{\theta}_{\omega_2}}{\sqrt{\text{Var}\left(\hat{\theta}_{\omega_1}-\hat{\theta}_{\omega_2}\right)}} = \frac{\sum_{i=1}^{n-1}\Omega_i i\xi_i}{\sqrt{\alpha_n\theta+\beta_n\theta^2}}, \label{achaz2009-2}
+\end{equation}
+where $\Omega_i\overset{\text{def}}{=}\omega_{1i} - \omega_{2i}$ and 
+\begin{eqnarray*}
+\alpha_n & = & \sum_{i=1}^{n-1} i\Omega_i^2 \\
+\beta_n & = & \sum_{i=1}^{n-1} i^2\Omega_i^2\sigma_{ii} + 2\sum_{i}\sum_{j>i} ij\Omega_i\Omega_j\sigma_{ij}
+\end{eqnarray*}
+with $\sigma_{ii}$ and $\sigma_{ij}$ --- assuming $i>j$ --- defined by the following rule: 
+\begin{equation*}
+\sigma_{ii} = \begin{cases} \vspace{2pt}
+b_n(i+1) & \text{if}~i<n/2 \\ \vspace{2pt}
+\frac{2(a_n-a_i)}{n-i} - \frac{1}{i^2} & \text{if}~i=n/2 \\ \vspace{2pt}
+b_n(i) - \frac{1}{i^2} & \text{if}~i>n/2
+\end{cases}
+\end{equation*}
+and
+\begin{equation*}
+\sigma_{ij} = \begin{cases} \vspace{2pt}
+\frac{b_n(i+1) - b_n(i)}{2} & \text{if}~i+j<n \\ \vspace{2pt}
+\frac{a_n-a_i}{n-i} + \frac{a_n-a_j}{n-j} - \frac{b_n(i)+b_n(j+1)}{2} - \frac{1}{ij} & \text{if}~i+j=n \\ \vspace{2pt}
+\frac{b_n(j)-b_n(j+1)}{2} - \frac{1}{ij} & \text{if}~i+j>n
+\end{cases}
+\end{equation*}
+Note that $b_n(i) \overset{\text{def}}{=}n(a_{n+1}-a_i)\big/ {n-i+1\choose 2} - 2/(n-i)$. These formulas are given in \citep[pg.~251]{Achaz2009}. This framework turns out to generalize the family of classical tests for neutrality, including Tajima's $D$, Fay and Wu's $H$ and Fu and Li's $F$. Ferretti et al. (see \cite{Ferretti2010}) demonstrated how this framework allows one to design optimal tests for neutrality, in the sense that the test is most powerful against a known alternative evolutionary model. They also used simulations to obtain frequency spectra for which the classical tests yield maximum power.
+
+In calculating the test statistic $T_\Omega$, one has to estimate $\theta$ and $\theta^2$ in the variance expression appearing in the denominator (see RHS of eq.~(\ref{achaz2009-2})). Because the Watterson estimator $\theta_W$ is consistent --- $\text{Var}(\theta_W) \rightarrow 0$ as the number of samples $n\uparrow\infty$ (see \citep[pg.~35]{Durrett2008}) --- it is typically used in this calculation. It can be verified that $E[S_n] = a_n \theta$ and $E[S_n^2-S_n] = (a_n^2 +A_n)\theta^2$ (see eq.~(2.30) in \citep[pg. 66]{Durrett2008}), hence in practice one would obtain $T_\Omega$ by setting the denominator $\sqrt{\text{Var}\left(\hat{\theta}_{\omega_1}-\hat{\theta}_{\omega_2}\right)}=\sqrt{\alpha_n\theta+\beta_n\theta^2}$ of eq.~(\ref{achaz2009-2}) to $\sqrt{\alpha_n S_n/a_n +\beta_n S_n(S_n-1) / (a_n^2+A_n)}$. Another method of obtaining the denominator is to simultaneously perform simulations on the standard model with $\hat{\theta}_{\omega_1}$ and $\hat{\theta}_{\omega_2}$ as the parameters, and then computing the observed variance.
+
+ \section*{Results}
+
+In this section, we prove our main theorems, which can be viewed as a family of results demonstrating how values of estimators $\hat{\theta}_\omega$ and of the test statistic $T_\Omega$ are constrained by any single component $\xi_i$ of the frequency spectrum. Throughout, we assume that we are given $n$ data samples that give rise to the unfolded frequency spectrum $\boldsymbol{\xi}=(\xi_i)_{i=1}^{n-1}$, and moreover the observed number of segregating sites $S_n=\sum_{i=1}^{n-1}\xi_i$. Our proofs rely on the rearrangement inequality of Hardy, Littlewood and P\'olya, which is reproduced below. We make use of the notation $\mathcal{S}_n$ to denote the symmetric group acting on a set of $n$ objects. 
+
+\begin{prop}[Rearrangement Inequality (\cite{Marshall2010}, pg.~207)] \label{rearrangement}
+For any two increasing sequences $(x_1,\ldots,x_n)$ and $(y_1,\ldots,y_n)$ of real numbers and any permutation $\sigma\in\mathcal{S}_n$, 
+\begin{equation*}
+\sum_{i=1}^n x_iy_i\geqslant \sum_{i=1}^n x_{\sigma(i)} y_i \geqslant \sum_{i=1}^n x_i y_{n-i+1}.
+\end{equation*}
+Moreover, if $x_1< \cdots < x_n$ and $y_1<\cdots < y_n$, then the upper bound is uniquely attained for the identity permutation $\sigma(i)=i$ while the lower bound is uniquely attained for the permutation reversing the order, i.e., $\sigma(i)=n-i+1$.  
+\end{prop}
+Note that Proposition \ref{rearrangement} can be viewed as follows: given any two arbitrary real vectors of the same length, the way to maximize their dot product across all permutations of their components is to pair the components of each vector in increasing order. Similarly, to minimize their dot product one should arrange the first vector in increasing order and the second vector in decreasing order and take the dot product. For example, given $\mathbf{x}=(1,2,3,4,5)$ and $\mathbf{y}=(-1,-3,7,-2,0)$, it is easy to check that the maximum dot product achievable across all permutations is $7\times 5 + 0\times 4 + (-1\times 3) + (-2\times 2) +(-3\times 1) = 25$ and the minimum dot product achievable is $7\times 1 + 0\times 2 + (-1\times 3) + (-2\times 4) + (-3\times 5)=-19$.
+
+\subsection*{Bounds on Estimators of $\theta$}
+
+\begin{thm}[Bounds on General Estimator] \label{thm:estimator-bounds}
+Let $\hat{\theta}_\omega$ be any estimator of $\theta$, as defined in eq.~(\ref{achaz2009-1}). Suppose that the number of sites with $j$ derived alleles is $\xi_j=k$, where $n-1\geqslant j\geqslant 1$. Then, 
+\begin{equation}
+kj\omega_j + (S_n-k)\max_{i\neq j}(i\omega_i)\geqslant \hat{\theta}_\omega \geqslant kj\omega_j + (S_n-k)\min_{i\neq j}(i\omega_i) \label{estimator-bounds}
+\end{equation}
+Equality with the upper bound is achieved only by the spectra $(0,\ldots,0,S_n-k,0,\ldots,0,k,0,\ldots,0)$, where the position of $S_n-k$ is any coordinate $i\in\arg\max_{i\neq j}(i\omega _i)$ and the position of $k$ is the $j$th coordinate; and equality with the lower bound is achieved only by the spectra $(0,\ldots,0,S_n-k,0,\ldots,0,k,0,\ldots,0)$, where the position of $S_n-k$ is any coordinate $i\in\arg\min_{i\neq j}(i\omega _i)$ and the position of $k$ is the $j$th coordinate. In particular, if $i\omega_i\neq i'\omega_{i'}$ for all indices $i\neq i'$, then the spectra achieving the upper and lower bounds are both unique.  
+\end{thm}
+\begin{proof}
+First, let $S_n$ be fixed. By fixing $x_j= k$, we see that $\boldsymbol{\xi}\in \{\mathbf{x}\in \mathbb{R}^{n-1}: x_i \geqslant 0~\forall i, x_j=k\}=\mathcal{R}$. We need to show that for any choice of $\boldsymbol{\xi}\in \mathcal{R}$, the dot product $(\omega_1,\ldots, (n-1)\omega_{n-1})\cdot\boldsymbol{\xi}$ lies between $kj\omega_j + (S_n-k)\max_{i\neq j}(i\omega_i)$ and $kj\omega_j + (S_n-k)\min_{i\neq j}(i\omega_i)$. Hence, suppose $\boldsymbol{\xi}\in \mathcal{R}$ is given by $(\xi_1,\ldots,\xi_{j-1},k,\xi_{j+1},\ldots,\xi_{n-1})$, and we furthermore denote $i\omega_i=\tau_i$. Recall that in taking the dot product $\langle \boldsymbol{\tau},\boldsymbol{\xi}\rangle = \tau_1\xi_1+\ldots+\tau_{n-1}\xi_{n-1}$, the term $\tau_j\xi_j = kj\omega_j$ is fixed; the $\tau_i$ are also fixed but the $\xi_i$ ($i\neq j$) are free. By Proposition \ref{rearrangement},
+\begin{equation*}
+kj\omega_j + \sum_{i\neq j} \tau_{[i]}\xi_{[i]} \geqslant \langle\boldsymbol{\tau},\boldsymbol{\xi}\rangle \geqslant kj\omega_j +\sum_{i=1}^{n-1} \tau_{[i]}\xi_{[n-i+1]}.
+\end{equation*} 
+In the expression above, $\xi_{[i]}$ denotes the $i$th largest component of $\boldsymbol{\xi}$ and $\tau_{[i]}$ denotes the $i$th largest component of $\boldsymbol{\tau}$. Finally, observe that the leftmost expression is at most $kj\omega_j + \tau_{[1]}\left(\sum_{i\neq j} \xi_{[i]}\right)$ --- this can be shown by applying a simple weight shifting procedure. However, this last expression is precisely $kj\omega_j+\left(\max_{i\neq j} \tau_i\right) (S_n-k) = kj\omega_j+\max_{i\neq j}(i\omega_i) (S_n-k)$. Hence, the upper bound inequality in eq.~(\ref{estimator-bounds}) holds. By a similar argument, the lower bound inequality can also be derived. In case $i\omega_i\neq i'\omega_{i'}$ for all indices $i\neq i'$, the weight shifting procedure above must increase the value of the maximum dot product, unless $\xi_{[1]}=S_n-k$ in the first place. It thus follows that equality can only be achieved by the spectrum $(0,\ldots,0,S_n-k,0,\ldots,0,k,0,\ldots,0)$, where the position of $S_n-k$ is the coordinate $i=\arg\max_{i\neq j}(i\omega _i)$ and the position of $k$ is the $j$th coordinate. A similar argument establishes the equality condition with the lower bound in case $i\omega_i\neq i'\omega_{i'}$ for all indices $i\neq i'$. 
+\end{proof} 
+
+Theorem \ref{thm:estimator-bounds} implies constraints on the classical estimators of the neutral locus scaled mutation rate $\theta$ --- which is equal to the average nucleotide diversity in cases where $N\mu$ is small --- placed by fixing the value of $\xi_j$ for some $j\in \{1,\ldots,n-1\}$. First, observe that to obtain the Watterson estimator $\theta_W=S_n/a_n$ we set $\omega_i=1/ia_n$, so this implies that if $S_n$ and $n$ are known, then $\theta_W$ is fixed. However, for the rest of the estimators --- notably Tajima's $\theta_\pi$ and Fay and Wu's $\theta_H$, which places more weight on sites having higher derived allele counts --- there is some ``free room.'' We demonstrate how Theorem \ref{thm:estimator-bounds} provides explicit bounds on the amount of free room available. 
+  
+\begin{cor}[Bounds on Tajima's $\theta_\pi$]\label{cor:tajima-pi}
+$\theta_\pi$ is obtained by the following choice of weights: for $n-1\geqslant i\geqslant 1$, $\omega_i=(n-i)\big/{n\choose 2}$. Suppose that the number of sites with $j$ derived alleles is $\xi_j=k$, where $n-1\geqslant j\geqslant 1$. Then, 
+\begin{equation*}
+k\frac{j(n-j)}{{n\choose 2}} + (S_n-k)\max_{i\neq j}\left(\frac{i(n-i)}{{n\choose 2}}\right)\geqslant \theta_\pi \geqslant k\frac{j(n-j)}{{n\choose 2}} + (S_n-k)\min_{i\neq j}\left(\frac{i(n-i)}{{n\choose 2}}\right).
+\end{equation*}
+Moreover, equality with either the upper or the lower bound is achieved by the spectra given in Theorem \ref{thm:estimator-bounds}.
+\end{cor}
+
+\begin{cor}[Bounds on Fay and Wu's $\theta_H$]\label{cor:faywu-thetaH}
+$\theta_H$ is obtained by the following choice of weights: for $n-1\geqslant i\geqslant 1$, $\omega_i=i\big/{n\choose 2}$. Suppose that the number of sites with $j$ derived alleles is $\xi_j=k$, where $n-1\geqslant j\geqslant 1$. Then, 
+\begin{equation*}
+k\frac{j^2}{{n\choose 2}} + (S_n-k)\max_{i\neq j}\left(\frac{i^2}{{n\choose 2}}\right)\geqslant \theta_H \geqslant k\frac{j^2}{{n\choose 2}} + (S_n-k)\min_{i\neq j}\left(\frac{i^2}{{n\choose 2}}\right).
+\end{equation*}
+Moreover, equality with either the upper or the lower bound is achieved uniquely by the spectra given in Theorem \ref{thm:estimator-bounds}.
+\end{cor}
+
+Corollaries \ref{cor:tajima-pi} and \ref{cor:faywu-thetaH} can be used to bound difference statistics in which one of the estimators is $\hat{\theta}= j\xi_j$. Two examples of such estimators (with $j=1$) are given by Fu and Li in \cite{Fu1993}: $F=\theta_\pi - \xi_1$ and $D = S_n/a_n - \xi_1$. Indeed, when one of the estimators is $j\xi_j$, it is likely that that the constraint placed by $\xi_j$ on the other estimator reduces the range of values that the difference statistic can take. As it turns out, there is a general framework with which we can understand how generic tests for neutrality can be shown to be constrained by $\xi_j$.
+
+\subsection*{Bounds on Difference Statistics}
+
+We prove a general result that establishes tight bounds placed by the number of sites with $j$ derived alleles on values of any normalized difference statistic $T_\Omega$. 
+
+\begin{thm}[Bounds on General Normalized Difference Statistic]\label{thm:test-bounds}
+Let $T_\Omega$ be any neutrality test under the infinite sites model, as defined in eq.~(\ref{achaz2009-2}). Suppose that the number of sites with $j$ derived alleles is $\xi_j=k$, where $n-1\geqslant j\geqslant 1$. Then, 
+\begin{equation}
+\frac{kj\Omega_j + (S_n-k)\max_{i\neq j}(i\Omega_i)}{\sqrt{\alpha_n S_n/a_n +\beta_n S_n(S_n-1) / (a_n^2+A_n)}} \geqslant T_\Omega \geqslant \frac{kj\Omega_j + (S_n-k)\min_{i\neq j}(i\Omega_i)}{\sqrt{\alpha_n S_n/a_n +\beta_n S_n(S_n-1) / (a_n^2+A_n)}}, \label{test-bounds}
+\end{equation}
+where $\alpha_n,\beta_n,a_n=\sum_{i=1}^{n-1}1/i$ and $A_n=\sum_{i=1}^{n-1}1/i^2$ as defined in the earlier Section. Moreover, if $i\Omega_i\neq i'\Omega_{i'}$ for all indices $i\neq i'$, then equality with the upper bound is achieved only by the spectrum $(0,\ldots,0,S_n-k,0,\ldots,0,k,0,\ldots,0)$, where the position of $S_n-k$ is the coordinate $i=\arg\max_{i\neq j}(i\omega _i)$ and the position of $k$ is the $j$th coordinate; and equality with the lower bound is achieved only by the spectrum $(0,\ldots,0,S_n-k,0,\ldots,0,k,0,\ldots,0)$, where the position of $S_n-k$ is the coordinate $i=\arg\min_{i\neq j}(i\omega _i)$ and the position of $k$ is the $j$th coordinate.
+\end{thm}
+
+\begin{proof}
+Similar to the proof of Theorem \ref{thm:estimator-bounds}, the argument first uses the rearrangement inequality to bound the numerator, and then we divide both sides by the denominator which is fixed. 
+\end{proof}
+
+Theorem \ref{thm:test-bounds} shows how values of neutrality tests can be constrained by additional knowledge of the number of polymorphic sites $\xi_j$ satisfying any specified derived allele frequency $j/n$. We apply Theorem \ref{thm:test-bounds} to obtain specific tight bounds for classical tests for neutrality. To keep our presentation uniform, we continue using the symbol $T_{\cdot}$ to denote the test statistic instead of the usual letters (e.g., $D$ and $H$). For example, we write Tajima's $D$ as $T_{\text{Tajima}}$. 
+
+\begin{cor}[Bounds on Tajima's $D$]
+$T_{\text{Tajima}}$ is obtained by the following choice of weights: $\Omega_i=(n-i)\big/{n\choose 2} - 1/(ia_n)$, i.e., $i\Omega_i=i(n-i)\big/{n\choose 2} - 1/a_n$. Suppose that the number of sites with $j$ derived alleles is $\xi_j=k$, where $n-1\geqslant j\geqslant 1$. Then,  
+\begin{equation*}
+\frac{k\left(\frac{2}{n} - \frac{1}{a_n}\right)+ (S_n-k)\left(\frac{n}{2(n-1)} - \frac{1}{a_n}\right)}{\sqrt{\alpha_n S_n/a_n +\beta_n S_n(S_n-1) / (a_n^2+A_n)}} \geqslant T_\text{Tajima} \geqslant \frac{S_n\left(\frac{2}{n}-\frac{1}{a_n}\right)}{\sqrt{\alpha_n S_n/a_n +\beta_n S_n(S_n-1) / (a_n^2+A_n)}}.
+\end{equation*}
+Moreover, equality with either the upper or the lower bound is achieved by the spectra given in Theorem \ref{thm:test-bounds}.
+\end{cor}
+
+\begin{cor}[Bounds on Fay and Wu's $H$]
+$T_{\text{FayWu}}$ is obtained by the following choice of weights: $\Omega_i=(n-2i)\big/{n\choose 2}$, i.e., $i\Omega_i=i(n-2i)\big/{n\choose 2}$. Suppose that the number of sites with $j$ derived alleles is $\xi_j=k$, where $n-1\geqslant j\geqslant 1$. Then, 
+\begin{equation*}
+\frac{\frac{k(n-2)}{n} +\frac{(S_n-k)n}{4(n-1)}}{\sqrt{\alpha_n S_n/a_n +\beta_n S_n(S_n-1) / (a_n^2+A_n)}} \geqslant T_\text{FayWu} \geqslant \frac{\frac{k(n-2)}{n} + \frac{2(S_n-k)(2-n)}{n}}{\sqrt{\alpha_n S_n/a_n +\beta_n S_n(S_n-1) / (a_n^2+A_n)}}.
+\end{equation*}
+Moreover, equality with either the upper or the lower bound is achieved by the spectra given in Theorem \ref{thm:test-bounds}.
+\end{cor}
+
+%\begin{cor}[Bounds on Fu and Li's $F$]
+%\end{cor}
+
+%\begin{cor}[Bounds on Ferretti's Optimal Test]
+%\end{cor}
+
+\section*{Application}
+Below, I discuss some potential applications of our results. 
+\begin{enumerate}
+\item \textbf{Guiding the interpretation of and helping to explain values of estimators and $T_\Omega$.}
+
+Underestimation of singletons in neutrality test based on NGS data due to ascertainment bias --- including pooled samples and data for autopolyploids (e.g., plant genomes).
+
+\item \textbf{Investigating the dynamics of estimators and $T_\Omega$ for data.}
+
+The trajectories of $T_\Omega$ and of $\hat{\theta}$ within the manifold bounding the pairs $(\xi_j,T_\Omega)$ and $(\xi_j,\hat{\theta})$ may lead to novel theoretical or empirical insights into the ``stability'' of statistics to evolutionary forces, or to perturbation of initial parameters.  
+
+\end{enumerate}
+\bibliographystyle{abbrv}
+\bibliography{bounding}
+
+\end{document}
