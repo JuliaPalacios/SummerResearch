@@ -1,0 +1,104 @@
+\documentclass[lettersize, 10.5pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+
+\begin{document}
+%Header-Make sure you update this information!!!!
+\noindent
+\large{\bfseries{\sffamily Summer Statistics Research}} \hfill {\bfseries{\sffamily Alan Aw}} \\
+\normalsize Project Proposal \hfill \texttt{alanaw1@stanford.edu} \\
+Supervisor: Julia Palacios \hfill Date: June 29, 2017\\
+Co-supervisor: Noah Rosenberg
+
+\section*{Aims and Objectives}
+
+In this project, we shall investigate theoretical properties of test statistics arising from the frequency spectrum, to derive mathematical relationships between values of these statistics and other features of the frequency spectrum. We shall also demonstrate the usefulness of such a mathematical treatment toward enhancing current statistical frameworks surrounding the effective use of such statistical tests on next generation sequencing (NGS) data, by means of data and mathematical plots that illustrate the mathematical relationships and their interaction with both sampled and simulated frequency spectra. 
+
+In addressing the questions raised above, we hope to enhance both existing and up-and-coming statistical frameworks developed for analyzing and interpreting NGS data, which should prove useful for both statisticians and practitioners applying statistical methods to biological problems. 
+
+\section*{Background and Significance}
+
+In population genetics, statistics based on the frequency spectrum $\boldsymbol{\xi}=(\xi_i)_{i=1}^{n-1}$ often arise as unbiased estimators for parameters in evolutionary models. Such statistics are calculated on the genomic data and, at times, also on simulated spectra of a standard model. With the advent of NGS technologies, a rigorous statistical framework for obtaining optimal estimates of evolutionary parameters has also recently been formulated (see \cite{Ferretti2013} and references therein). In computing these statistics, practitioners are able to (i) estimate evolutionary parameters (in case the parametric model is assumed correct), or to (ii) validate or reject the standard model in favor of an alternative evolutionary hypothesis. In both (i) and (ii), statistical problems abound---for (i), see, e.g., \cite{Bhaskar2015} for work on efficient algorithms for computing maximum likelihood mutation rates in a parametric inference framework. The focus of our project is on (ii). 
+
+First, consider a evolutionary model with mutation. In a population evolving neutrally, the population-scaled mutation rate (sometimes known as nucleotide diversity) $\theta=4N_e\mu$ admits a family of unbiased estimators based on the frequency spectrum, which is given by
+\begin{equation}
+\hat{\theta}_\omega = \frac{1}{\sum_{i=1}^{n-1}\omega_i} \sum_{i=1}^{n-1}\omega_i i\xi_i, \label{achaz2009-1}
+\end{equation}
+where $\boldsymbol{\omega}=(\omega_i)_{i=1}^{n-1}\in (\mathbb{R}_0^+)^{n-1}$ \cite{Achaz2009}. Neutrality tests based on the frequency spectrum compare two estimators of $\theta$, where a test statistic called $T_\Omega$ is defined that is approximately $N(0,1)$ distributed, where 
+\begin{equation}
+T_\Omega=\frac{\hat{\theta}_{\omega_1}-\hat{\theta}_{\omega_2}}{\sqrt{\text{Var}\left(\hat{\theta}_{\omega_1}-\hat{\theta}_{\omega_2}\right)}} = \frac{\sum_{i=1}^{n-1}\Omega_i i\xi_i}{\sqrt{\alpha_n\theta+\beta_n\theta^2}} \label{achaz2009-2}
+\end{equation}
+and $\hat{\theta}_{\omega_1}$ and $\hat{\theta}_{\omega_2}$ are any two estimators taking the form in eq.~(\ref{achaz2009-1}). Note that $\Omega_i\overset{\text{def}}{=}\omega_{1i}\big/\left(\sum_j \omega_{1j}\right) - \omega_{2i}\big/\left(\sum_j \omega_{2j}\right)$, and $\alpha_n,\beta_n$ are defined in eq.~(9) of \cite{Achaz2009}. Classical tests of neutrality, including Tajima's $D$, Fu and Li's $F$ and Fay and Wu's $H$, all correspond to specific choices of $\hat{\theta}_{\omega_1}$ and $\hat{\theta}_{\omega_2}$ in eq.~(\ref{achaz2009-2}) above. Under this framework, most powerful tests against a sufficiently large class of alternative evolutionary hypotheses can be obtained \cite{Ferretti2010}. 
+
+Despite the remarkable amount of theoretical work surrounding computational and statistical aspects of the neutrality test, little is known about the mathematical properties of the test statistic $T_\Omega$. In similar mathematical studies of other population genomic statistics, including homozygosity-based tests for detecting sweeps (see \cite{Garud2015}) and $F_{ST}$ for measuring population differentiation (see \cite{Alcala2017} and references therein), it was shown that mathematical constraints on the test statistics can provide additional information about the genetic data. Hence, it remains relevant to investigate how mathematical properties of $T_\Omega$ may enhance interpretation of values computed of the test statistic.
+
+\section*{Research Design and Methods}
+
+First, we will perform a thorough review of the literature on neutrality tests that involve $T_\Omega$, to identify a reasonable scope within which to perform our investigation. Relevant papers are listed on the following GitHub page:
+\begin{center}
+\texttt{https://github.com/JuliaPalacios/SummerResearch/blob/master/README.md}
+\end{center}
+Next, we will apply mathematical methods to obtain tight bounds on the relevant class of $T_\Omega$ to obtain a theoretical result. Finally, we will apply the theoretical bounds to simulated and sampled data, to compare how these data fit within the regions constrained by the bounds. 
+
+\section*{Attachments}
+%Make sure to change these
+Some preliminary results have been obtained, and are attached behind for reference.
+%\fi %comment me out
+
+\begin{thebibliography}{9}
+\bibitem{Achaz2008} Achaz, Guillaume. (2008) ``Testing for neutrality in samples with sequencing errors,'' \textit{Genetics} \textbf{179}: 1409-1424. 
+\bibitem{Achaz2009} Achaz, Guillaume. (2009) ``Frequency spectrum neutrality tests: one for all and all for one,'' \textit{Genetics} \textbf{183}: 249-258. 
+\bibitem{Alcala2017} Alcala, Nicolas, Noah A.~Rosenberg. (2017) ``Mathematical constraints on $F_{ST}$: biallelic markers in arbitrarily many populations,'' \textit{Genetics}: in press. 
+\bibitem{Bhaskar2015} Bhaskar, Anand, Rachel Y.X.~Wang, Yun S.~Song. (2015) ``Efficient inference of population size histories and locus-specific mutation rates from large-sample genomic variation data,'' \textit{Genome Research} \textbf{25}: 268-279.
+\bibitem{Ferretti2010} Ferretti, Luca, Miguel P\'erez-Enciso, Sebasti\'an Ramos-Onsins. (2010) ``Optimal neutrality tests based on the frequency spectrum,'' \textit{Genetics} \textbf{186}: 353-365. 
+\bibitem{Ferretti2013} Ferretti, Luca, Sebasti\'an Ramos-Onsins, Miguel P\'erez-Enciso. (2013) ``Population genomics from pool sequencing,'' \textit{Molecular Ecology} \textbf{22}: 5561-5576. 
+\bibitem{Garud2015} Garud, Nandita, Noah A.~Rosenberg. (2015) ``Enhancing the mathematical properties of new haplotype homozygosity statistics for the detection of selective sweeps,'' \textit{Theoretical Population Biology} \textbf{102}: 94-101.
+\end{thebibliography}
+
+\newpage
+\section*{Appendix}
+Below, I describe some preliminary results I obtained over this week.
+\begin{enumerate}
+\item \textit{Main Result}
+
+Let the unfolded SFS of a given dataset ($n\geqslant 3$ sequences) be denoted by $\boldsymbol{\xi}=(\xi_i)_{i=1}^{n-1}$, where there are $\sum_{i=1}^{n-1}\xi_i=k$ segregating sites. Suppose the number of derived singletons $\xi_1= \ell\in[0,k]$. Then, for any neutrality test $\Omega=\hat{\theta}_{\omega_1}-\hat{\theta}_{\omega_2}=\sum_{i=1}^{n-1}i\Omega_i\xi_i$ (where $\hat{\theta}_{\omega_1}$ and $\hat{\theta}_{\omega_2}$ are distinct estimators of $\theta$), 
+\begin{equation*}
+(k-\ell) \min_{2\leqslant i\leqslant n-1}(i\Omega_i) + \ell\Omega_1 \leqslant \Omega \leqslant (k-\ell) \max_{2\leqslant i\leqslant n-1}(i\Omega_i) + \ell\Omega_1. 
+\end{equation*}
+Moreover, equality in the left occurs if and only if $\boldsymbol{\xi}=(\ell,0,\ldots,0, k-\ell,0,\ldots,0)$ where $k-\ell$ occurs in the $j$th position of the vector and $j=\arg\min_{2\leqslant i\leqslant n-1}(i\Omega_i)$. Equality in the right occurs if and only if $\boldsymbol{\xi}=(\ell,0,\ldots,0, k-\ell,0,\ldots,0)$ where $k-\ell$ occurs in the $j$th position of the vector and $j=\arg\max_{2\leqslant i\leqslant n-1}(i\Omega_i)$.
+\item \textit{Specific Cases}
+\begin{itemize}
+\item Tajima's $D=\Omega_\text{Tajima}$. Here, $\Omega_i=(n-i)\big/{n\choose 2} - 1\big/(i\sum_{m=1}^{n-1} m^{-1})$, so 
+\begin{equation*}
+i\Omega_i = \frac{(n-i)i}{{n\choose 2}} - \frac{1}{\sum_{m=1}^{n-1} m^{-1}}.
+\end{equation*}
+Hence, 
+\begin{equation*}
+k\left(\frac{2}{n}-\frac{1}{\sum_{m=1}^{n-1} m^{-1}}\right) \leqslant \Omega_\text{Tajima} \leqslant \ell\left(\frac{2}{n} - \frac{1}{\sum_{m=1}^{n-1} m^{-1}}\right) + (k-\ell)\left(\frac{n}{2(n-1)} - \frac{1}{\sum_{m=1}^{n-1} m^{-1}}\right).
+\end{equation*}
+\item Fay and Wu's $H=\Omega_\text{FayWu}$. Here, $\Omega_i=(n-2i)\big/{n\choose 2}$, so 
+\begin{equation*}
+i\Omega_i = \frac{(n-2i)i}{{n\choose 2}}.
+\end{equation*}
+Hence, 
+\begin{equation*}
+\frac{\ell(n-2)}{n} + \frac{2(k-\ell)(2-n)}{n}\leqslant \Omega_\text{FayWu} \leqslant \frac{\ell(n-2)}{n} +\frac{(k-\ell)n}{4(n-1)}.
+\end{equation*}
+\item Fu and Li's $F=\Omega_\text{FuLi}$. Here, $\Omega_i=\mathbf{1}(i=1)(2/n - 1) + \mathbf{1}(i>1)\left[(n-i)\big/{n\choose 2}\right]$, so 
+\begin{equation*}
+i\Omega_i \overset{i\geqslant 2}{=} \frac{i(n-i)}{{n\choose 2}}.
+\end{equation*}
+Hence, 
+\begin{equation*}
+\frac{2(k-\ell)}{n}+\frac{\ell(2-n)}{n}\leqslant \Omega_\text{FayWu} \leqslant \frac{(k-\ell)n}{2(n-1)}+\frac{\ell(2-n)}{n}.
+\end{equation*}
+\end{itemize}
+\item \textit{Next Steps}
+
+We will obtain more bounds like the above, for the most powerful tests described in \cite{Ferretti2010}, and potentially even for the neutrality tests for NGS data which is discussed in \cite{Ferretti2013}. Moreover, after this is done we will incorporate all bounds into the associated $T_\Omega$ statistics to obtain upper and lower bounds on $T_\Omega$. The mathematical bounds restrict the region in which any computed value of $T_\Omega$ can lie. We will also explore ways of justifying the constraint set on the number of singletons $\xi_1$ (as opposed to other $\xi_i$'s), potentially looking into arguments given in \cite{Achaz2008} regarding the omission of singletons in computing the test statistic for reasons owing to sequencing error underestimating the total number of singletons. Lastly, we will apply our bounds onto both sampled and simulated data sets. 
+\end{enumerate}
+\end{document}
