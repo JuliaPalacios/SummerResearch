@@ -23,7 +23,7 @@ Keep an R-Markdown document or Jupyter notebook with your code and comment your 
 *Expectations*:
 You will present your project proposal on June 29 in 10 minutes. You will describe the questions you want to answer and how you plan to answer them. You will also have a list of references you will read during the summer program.
 
-Give two oral presentations, the first presentation of 20 minutes will be on Thursday July 20 about your progress and your final presentation of 40 minutes will be on Thursday August 31. 
+Give two oral presentations, the first presentation of 20 minutes will be on Thursday July 27 about your progress and your final presentation of 40 minutes will be on Thursday August 31. 
 
 Your first complete draft is due on August 25 and your final publishable paper is due on September 1st.
 
