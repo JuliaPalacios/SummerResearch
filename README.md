@@ -36,7 +36,7 @@ Part of our summer research will involve reading and discussing some scientific 
 
 | Date | Link to paper | Reader | Description
 |------|--------------|-----------|-----------|
-| June 27 | [A metric on phylogenetic tree shapes](http://biorxiv.org/content/early/2017/02/09/054544)| Julia |Given a tree shape, the authors propose a labeling scheme of internal nodes traversing the tree from tips to root such that the label of the root uniquely identifies the tree shape. With this single "number" they construct different metrics and define addition and multiplication of tree shapes with different mappings. This labeling scheme can be useful for counting ranked tree shapes that are compatible with the data. Not clear how to "adjust" for the ranking or if ranking can come as a second step in the counting |
+| June 27 | [Stochastic models and descriptive statistics for phylogenetic trees, from Yule to today](https://projecteuclid.org/euclid.ss/998929474)| All | write summary |
 
 
 Put yourself on the calendar like this:
