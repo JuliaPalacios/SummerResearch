@@ -1,8 +1,0 @@
-		
-
-1.— go to your folder
-2.- type: git pull (for updating your repository)
-3.- work on your file locally
-4.- type: git add your_file
-5.- type: git commit -m “your comment”
-6.- type: git push
