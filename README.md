@@ -14,7 +14,7 @@ June 25 - August 17, 40hrs per week
 *Seminars of interest*: Statistics seminar, Tuesdays 4:30PM, Sequoia Hall room 200 (refreshments provided in room 100 at 4PM).
 
 *General instructions*: 
-The main components will be reading papers, using in R with many graphics and simulations, and the analysis of real data. You can work on adapting a statistical method to analyze some data in order to answer a scientific question, develop statistical methodology to answer a scientific question or explore the statistical properties of existent methods.
+The main components will be reading papers, use R for graphics and simulations and the analysis of real data. You can work on adapting a statistical method to analyze some data in order to answer a scientific question, develop statistical methodology to answer a scientific question or explore the statistical properties of existent methods.
 
 You are expected to start working on your ﬁnal report from the start, so that you have a complete ﬁnal document when your research time is over (and not afterwards), so keep completing your report every week.
 
@@ -36,7 +36,7 @@ Part of our summer research will involve reading and discussing some scientific 
 
 | Date | Link to paper | Reader | Description
 |------|--------------|-----------|-----------|
-| June 27 | [Stochastic models and descriptive statistics for phylogenetic trees, from Yule to today](https://projecteuclid.org/euclid.ss/998929474)| All | write summary |
+| June 27 | [Stochastic models and descriptive statistics for phylogenetic trees, from Yule to today](https://projecteuclid.org/euclid.ss/998929474)| Kyle | This paper was a great introduction to trees and stochastic processes, but I found it also quite complicated and often confusing. Yule's 1924 paper proposes the idea of Yule processes and observes that phylogenetic trees are unbalanced, with a long-tailed distribution. Aldous also spoke of the branching process, based on a tree with shape (m,i), where m = size of parent clade and s = size of smaller daughter clade. Additionally, Aldous touches on selection and systematic biases as well as adaptive radiation. Aldous claims that more elaborate models are necessary, as numbers of species don't tend to increase or ddecrease very quickly, except in cases of mass extinction, which tend to be completely random. In summary, Aldous concludes that phylogenetic trees have observed imbalance. If macroecolutionary processes are to be amenable to mathematical modeling, we will have to continue refining our methods and metrics to model such processes. The Yule process is used to model macroevlolutionary events . Confusions/questions include the snakes table on page 24, the clades on pg. 27, the idea of adaptive radiation as well as the beta-splitting model (Appendix). 
 
 
 Put yourself on the calendar like this:
@@ -45,5 +45,5 @@ Put yourself on the calendar like this:
 |------|--------------|-----------|--------------------------------------------|
 | May 16   | [paper](https://...) | Julia | A very interesting paper |
 |------|--------------|-----------|--------------------------------------------|
-| June 27 | [Stochastic models and descriptive statistics for phylogenetic trees, from Yule to today](https://projecteuclid.org/euclid.ss/998929474)| Kyle | This paper was a great introduction to trees and stochastic processes, but I found it also quite complicated and often confusing. Yule's 1924 paper proposes the idea of Yule processes and observes that phylogenetic trees are unbalanced, with a long-tailed distribution. Aldous also spoke of the branching process, based on a tree with shape (m,i), where m = size of parent clade and s = size of smaller daughter clade. Additionally, Aldous touches on selection and systematic biases as well as adaptive radiation. Aldous claims that more elaborate models are necessary, as numbers of species don't tend to increase or ddecrease very quickly, except in cases of mass extinction, which tend to be completely random. In summary, Aldous concludes that phylogenetic trees have observed imbalance. If macroecolutionary processes are to be amenable to mathematical modeling, we will have to continue refining our methods and metrics to model such processes. The Yule process is used to model macroevlolutionary events . Confusions/questions include the snakes table on page 24, the clades on pg. 27, the idea of adaptive radiation as well as the beta-splitting model (Appendix). 
+
 
