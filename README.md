@@ -41,9 +41,7 @@ Part of our summer research will involve reading and discussing some scientific 
 
 Put yourself on the calendar like this:
 
-| Date | Link to paper | Reader | Description
-|------|--------------|-----------|--------------------------------------------|
-| May 16   | [paper](https://...) | Julia | A very interesting paper |
-|------|--------------|-----------|--------------------------------------------|
+ ```
+ | May 16   | [paper](https://...) | Julia | A very interesting paper |
 
 
