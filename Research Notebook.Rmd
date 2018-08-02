@@ -20,7 +20,78 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 ---
 
 ```{r}
-i = 2+ 2;
+
 ```
 
+Testing with Trees.
+```{r}
+library("phangorn")
+source("https://bioconductor.org/biocLite.R")
+biocLite("ggtree")
+library("ggtree")
+load("../data/tree1.RData")
+
+library("phangorn")
+library("ggtree")
+
+ggtree(tree1,lwd=2,color="coral",alpha=0.8,right=TRUE) +
+                   geom_tiplab(size=7,angle=90,offset=0.05) +
+geom_point(aes(shape=isTip, color=isTip), size=5, alpha=0.6) 
+```
+
+seqs6=simSeq(tree1,l=60,type="DNA",bf=c(1/8,1/8,3/8,3/8),rate=.1)
+seqs6
+```{r}
+seqs6=simSeq(tree1,l=60,type="DNA",bf=c(1/8,1/8,3/8,3/8),rate=.1)
+seqs6
+```
+
+Generating some sequences from tree:
+
+```{r}
+mat6=as.character(seqs6)
+mat6df=data.frame(mat6)
+p=ggtree(tree1,lwd=1.2)+geom_tiplab(aes(x=branch),size=5,vjust=2)
+gheatmap(p,mat6df[,1:60],offset=0.01,colnames=FALSE)
+```
+
+Estimating tree with neighbor joining method.
+
+```{r}
+tree.nj = nj(dist.ml(seqs6,"JC69"))
+ggtree(tree.nj)+geom_tiplab(size=7)+ggplot2::xlim(0, 0.8)
+```
+
+## try http:// if https:// URLs are not supported
+source("https://bioconductor.org/biocLite.R")
+biocLite("DESeq2")
+
+source("https://bioconductor.org/biocLite.R")
+biocLite("phyloseq")
+
+```{r}
+library("DESeq2")
+library("phyloseq")
+ps_dds = phyloseq_to_deseq2(ps1, design = ~ ageBin + family_relationship)
+geo_mean_protected = function(x) {
+             if (all(x == 0)) {return (0) }
+    exp(mean(log(x[x != 0])))
+  }
+geoMeans = apply(counts(ps_dds), 1, geo_mean_protected)
+ps_dds = estimateSizeFactors(ps_dds, geoMeans = geoMeans)
+ps_dds = estimateDispersions(ps_dds)
+abund = getVarianceStabilizedData(ps_dds)
+```
+
+```{r}
+library("ape")
+myfirstree<-rcoal(n=10)
+plot(myfirstree)
+write.nexus(myfirstree,file="test")
+
+
+read.newick() ##Julia will fill in
+```
+
+Kyle to push.
 
