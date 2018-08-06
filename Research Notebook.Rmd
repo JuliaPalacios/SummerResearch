@@ -92,6 +92,57 @@ write.nexus(myfirstree,file="test")
 
 read.newick() ##Julia will fill in
 ```
+Kyle pushed.
 
-Kyle to push.
+Packages required - ape, apTreeshape, treespace, distory
+
+
+```{r}
+library("apTreeshape")
+kingmantreeslist3=rtreeshape(n=50, tip.number=50, model="yule")
+for (i in 1:25) {
+  newtree=simulate_kingman(epsilon=0.001, alpha=-1,beta=-1,N=50,equal.ab=FALSE,eta=1.5)
+  kingmantreeslist3[[i]] = as.phylo(newtree)
+} 
+```
+
+```{r}
+for (i in 26:50) {
+  nexttree=simulate_yule(epsilon=0.001, alpha=-1,beta=-1,N=50,equal.ab=FALSE,eta=1.5, b=1,d=0)
+  kingmantreeslist3[[i]] = as.phylo(nexttree)
+} 
+#yuletree = simulate_yule(epsilon=0.001,alpha=-1,beta=-1,N=50,equal.ab=FALSE,eta=1.5,b=1,d=0)
+#kingmantreeslist[[26]]=as.phylo(yuletree)
+distmatrix3 = matrix(0, nrow=50, ncol=50)
+for(i in 1:50){
+  for(j in i:50){
+    distance3 = dist.topo(kingmantreeslist3[[i]],kingmantreeslist3[[j]], method = "PH85")
+    distmatrix3[i,j]= distance3
+    distmatrix3[j,i]= distance3
+  }
+}
+```
+
+# Classical MDS
+# N rows (objects) x p columns (variables)
+# each row identified by a unique row name
+```{r}
+fit <- cmdscale(distmatrix3,eig=TRUE, k=2) # k is the number of dim
+fit # view results
+row.names(distmatrix3) = (1:50)
+# plot solution 
+x3 <- fit$points[,1]
+y3 <- fit$points[,2]
+plot(x3, y3, xlab="Coordinate 1", ylab="Coordinate 2", 
+     main="Metric_MDS - #1-25 Coalescent Tree, 26-50 Yule Birth, n=50", type="n")
+text(x3, y3, labels = row.names(distmatrix3), cex=.7)
+points(mean(x3[1:25]), mean(y3[1:25]), pch=1)
+points(mean(x3[26:50]), mean(y3[26:50]), pch=2)
+#cophyloplot(tree1,tree2) or cophyloplot(treelist) to compare trees visually
+#To get Nexus - write.nexus(tree in phylo format)
+```
+
+
+
+
 
