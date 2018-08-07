@@ -1,0 +1,26 @@
+Package: apTreeshape
+Date: 2018-03-22
+Version: 1.5-0
+Title: Analyses of Phylogenetic Treeshape
+Author: Nicolas Bortolussi, Michael Blum, Eric Durand, Olivier Francois, Odile Maliet
+Maintainer: Michael Blum <michael.blum@univ-grenoble-alpes.fr>
+Depends: R (>= 2.0.0), ape
+Imports: quantreg, cubature, coda, pbapply
+Description: Simulation and analysis
+        of phylogenetic tree topologies using statistical indices. It
+        is a companion library of the 'ape' package. It provides
+        additional functions for reading, plotting, manipulating
+        phylogenetic trees. It also offers convenient web-access to
+        public databases, and enables testing null models of
+        macroevolution using corrected test statistics.  Trees of class
+        "phylo" (from 'ape' package) can be converted easily.
+        Implements methods described in Bortolussi et al. (2005)
+        <doi:10.1093/bioinformatics/bti798> and Maliet et al. (2017) 
+        <doi:10.1101/224295>.
+License: GPL (>= 2)
+Encoding: latin1
+Repository: CRAN
+NeedsCompilation: no
+Packaged: 2018-04-03 07:58:59 UTC; mblum
+Date/Publication: 2018-04-04 11:26:22 UTC
+Built: R 3.5.0; ; 2018-04-24 06:01:50 UTC; unix

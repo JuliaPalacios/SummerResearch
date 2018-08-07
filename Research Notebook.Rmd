@@ -20,7 +20,176 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 ---
 
 ```{r}
-i = 2+ 2;
+
+```
+
+Testing with Trees.
+```{r}
+library("phangorn")
+#source("https://bioconductor.org/biocLite.R")
+#biocLite("ggtree")
+#library("ggtree")
+load("../data/tree1.RData")
+
+#library("phangorn")
+#library("ggtree")
+
+ggtree(tree1,lwd=2,color="coral",alpha=0.8,right=TRUE) +
+                   geom_tiplab(size=7,angle=90,offset=0.05) +
+geom_point(aes(shape=isTip, color=isTip), size=5, alpha=0.6) 
+```
+
+seqs6=simSeq(tree1,l=60,type="DNA",bf=c(1/8,1/8,3/8,3/8),rate=.1)
+seqs6
+```{r}
+seqs6=simSeq(tree1,l=60,type="DNA",bf=c(1/8,1/8,3/8,3/8),rate=.1)
+seqs6
+```
+
+Generating some sequences from tree:
+
+```{r}
+mat6=as.character(seqs6)
+mat6df=data.frame(mat6)
+p=ggtree(tree1,lwd=1.2)+geom_tiplab(aes(x=branch),size=5,vjust=2)
+gheatmap(p,mat6df[,1:60],offset=0.01,colnames=FALSE)
+```
+
+Estimating tree with neighbor joining method.
+
+```{r}
+tree.nj = nj(dist.ml(seqs6,"JC69"))
+ggtree(tree.nj)+geom_tiplab(size=7)+ggplot2::xlim(0, 0.8)
+```
+
+## try http:// if https:// URLs are not supported
+##source("https://bioconductor.org/biocLite.R")
+#biocLite("DESeq2")
+
+##source("https://bioconductor.org/biocLite.R")
+#biocLite("phyloseq")
+
+```{r}
+#library("DESeq2")
+#library("phyloseq")
+ps_dds = phyloseq_to_deseq2(ps1, design = ~ ageBin + family_relationship)
+geo_mean_protected = function(x) {
+             if (all(x == 0)) {return (0) }
+    exp(mean(log(x[x != 0])))
+  }
+geoMeans = apply(counts(ps_dds), 1, geo_mean_protected)
+ps_dds = estimateSizeFactors(ps_dds, geoMeans = geoMeans)
+ps_dds = estimateDispersions(ps_dds)
+abund = getVarianceStabilizedData(ps_dds)
+```
+
+```{r}
+library("ape")
+myfirstree<-rcoal(n=10)
+plot(myfirstree)
+write.nexus(myfirstree,file="test")
+
+
+read.newick() ##Julia will fill in
+```
+Kyle pushed.
+
+Packages required - ape, apTreeshape, treespace, distory
+
+
+```{r}
+library("apTreeshape")
+kingmantreeslist3=rtreeshape(n=50, tip.number=50, model="yule")
+for (i in 1:25) {
+  newtree=simulate_kingman(epsilon=0.001, alpha=-1,beta=-1,N=50,equal.ab=FALSE,eta=1.5)
+  kingmantreeslist3[[i]] = as.phylo(newtree)
+} 
+```
+
+```{r}
+for (i in 26:50) {
+  nexttree=simulate_yule(epsilon=0.001, alpha=-1,beta=-1,N=50,equal.ab=FALSE,eta=1.5, b=1,d=0)
+  kingmantreeslist3[[i]] = as.phylo(nexttree)
+} 
+#yuletree = simulate_yule(epsilon=0.001,alpha=-1,beta=-1,N=50,equal.ab=FALSE,eta=1.5,b=1,d=0)
+#kingmantreeslist[[26]]=as.phylo(yuletree)
+distmatrix3 = matrix(0, nrow=50, ncol=50)
+for(i in 1:50) {
+  for(j in i:50){
+    distance3 = dist.topo(kingmantreeslist3[[i]],kingmantreeslist3[[j]], method = "PH85")
+    distmatrix3[i,j]= distance3
+    distmatrix3[j,i]= distance3
+  }
+}
+```
+
+# Classical MDS
+# N rows (objects) x p columns (variables)
+# each row identified by a unique row name
+```{r}
+fit <- cmdscale(distmatrix3,eig=TRUE, k=2) # k is the number of dim
+fit # view results
+row.names(distmatrix3) = (1:50)
+# plot solution 
+x3 <- fit$points[,1]
+y3 <- fit$points[,2]
+plot(x3, y3, xlab="Coordinate 1", ylab="Coordinate 2", 
+     main="Metric_MDS - #1-25 Coalescent Tree, 26-50 Yule Birth, n=50", type="n")
+text(x3, y3, labels = row.names(distmatrix3), cex=.7)
+points(mean(x3[1:25]), mean(y3[1:25]), pch=1)
+points(mean(x3[26:50]), mean(y3[26:50]), pch=2)
+#cophyloplot(tree1,tree2) or cophyloplot(treelist) to compare trees visually
+#To get Nexus - write.nexus(tree in phylo format)
+```
+
+```{r}
+library("ape")
+library("apTreeshape")
+myNewTree = rtreeshape(n=1, tip.number=10, model = "yule");
+myNewTreePhylo = as.phylo(myNewTree[[1]])
+plot.phylo(myNewTreePhylo)
+
+```
+
+```{r}
+write.nexus(myNewTreePhylo)
+```
+
+```{r}
+anotherTree = rtreeshape(n=1, tip.number=5, model = "yule");
+anotherTreePhylo = as.phylo(anotherTree[[1]])
+plot.phylo(anotherTreePhylo)
+```
+```{r}
+write.nexus(anotherTreePhylo)
+```
+```{r}
+file1 = write.nexus(anotherTreePhylo);
+str(anotherTreePhylo);
+file1 = read.tree();
+plot.phylo(file1)
+```
+
+```{python}
+newick = "(1:4,((5:2,4:2):1,(3:1,2:1):2):1)";
+newick;
+```
+To ladderize.
+```{r}
+file2 = ladderize(file1);
+file2
+plot.phylo(file2)
+nexus2 = write.nexus(file2)
+```
+```{r}
+tree2 = read.tree()
+
+```
+
+```{r}
+newick = "(1:4,((5:2,4:2):1,(3:1,2:1):2):1)";
+newick;
+newick
 ```
 
 

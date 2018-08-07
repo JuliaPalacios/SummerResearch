@@ -1,0 +1,70 @@
+a_N                     Computes a_n
+aldous.test             Visualizing balance via scatter diagrams
+all.equal.treeshape     Compare two objects of class treeshape
+as.phylo.treeshape      Conversion among tree objects
+as.treeshape            Conversion among tree objects
+aux_lik                 Probability of the sampled node position
+bind.trees              Binds two tree together
+build_tree              Internal BetaAlphaEta function
+carnivora.treeshape     Phylogeny of carnivores.
+change_int              Internal function
+change_int_eta          Internal function
+cladesize               Compute the number of children of a randomly
+                        chosen node
+colless                 Compute the Colless' shape statistic on tree
+                        data
+colless.test            Perform a test on the Yule or PDA hypothesis
+                        based on the Colless or the Sackin statistic
+cutreeshape             Cut objects of class "treeshape"
+cytochromc              Phylogeny of the cytochrome C family.
+depth                   Gets the node depths of the tree
+enhance                 Internal function
+enhance_eta             Internal function
+get_PD_sample           Computes the proportion of conserved PD
+get_extinction_list     Gives the tips of the phylogeny in their
+                        extinction order
+get_tree_beta           Beta parameter as a function of the proportion
+                        of remaining tips
+hivtree.treeshape       Phylogenetic Tree of 193 HIV-1 Sequences
+insert                  Insert an element in a vector
+lambda.epsilon          Computes lambda_epsilon
+lambda_N                Computation of lambda_epsilon
+likelihood.test         Test the Yule model vs PDA (uniform) model.
+maxlik.betasplit        Maximum likelihood of beta in the
+                        Beta-splitting model
+mcmc_alpha              Inference of the alpha parameter
+mcmc_eta                Inference of the alpha and eta parameters
+nodes_depths_ordonnes   Gets the node depths of the tree
+plot.treeshape          Plot phylogenetic treeshapes.
+primates                Phylogeny of the primates.
+rbactrian               Proposal for the mcmc functions
+rhodopsin               Phylogeny of rhodopsin proteins.
+rtreeshape              Generate a list of random binary trees
+                        according to a given model
+sackin                  Compute the Sackin's index of a tree
+shape.statistic         Computes the log of the likelihood ratio
+                        (yule/pda)
+shift.test              Testing diversification rate variation in
+                        phylogenetic trees
+simulate.R              Simulate R knowing K=k
+simulate.R.K            Simulate (R,K)
+simulate.Tau.X          Simulate (Tau, X_Tau-)
+simulate.Yi             Simulates the random variables Y_i
+simulate_kingman        Ranked topology with Kingman's coalescent
+                        depths
+simulate_tree           Simulates ranked topology
+simulate_yule           Ranked topology with Birth-death process depths
+smaller.clade.spectrum
+                        Compute the smaller clade spectrum of a tree.
+spectrum.treeshape      Compute the spectrum of a tree
+split                   Computes the splits at each node of a tree
+subtree.test            Test the Yule or PDA hypothesis
+summary.treeshape       Print a summary of an object of class
+                        "treeshape"
+tipsubtree              Extract a subtree that contains pre-specified
+                        tip names or labels
+transform               Internal function
+transform_eta           Internal function
+treeshape               Builds an object of class treeshape
+universal.treeshape     Universal phylogenetic tree of life
+yule_lengths            Internal BetaAlphaEta function

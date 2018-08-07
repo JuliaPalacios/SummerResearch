@@ -1,0 +1,75 @@
+# Remove the previous line if you edit this file
+
+# Export all names
+export(aldous.test,
+       all.equal.treeshape,
+       ancestor,
+       as.phylo.treeshape,
+       as.treeshape.phylo,
+       as.treeshape,
+       as.treeshape.treebalance,
+       cladesize,
+       colless,
+       colless.test,
+       cutreeshape,
+       Delta,
+       get_PD_sample, 
+       get_tree_beta,
+       is.binary.phylo,
+       likelihood.test,
+       logratio,
+       maxlik.betasplit,
+       mcmc_alpha, 
+       mcmc_eta,
+       plot.treeshape,
+       raldous,
+       rbiased,
+       rpda,
+       rtreeshape,ryule,
+       sackin,
+       sackin.test,
+       shape.statistic,
+       shift.test,
+       simulate_kingman, 
+       simulate_tree, 
+       simulate_yule, 
+       smaller.clade.spectrum,
+       smaller.clade.spectrum2,
+       spectrum.treeshape,
+       subtree.test,
+       summary.treeshape,
+       tipsubtree,
+       treebalance,
+       treeshape
+       )
+
+S3method(all.equal, treeshape)
+S3method(as.phylo, treeshape)
+S3method(as.treeshape, phylo)
+S3method(is.binary, phylo)
+S3method(plot, treeshape)
+S3method(summary, treeshape)
+S3method(as.treeshape, treebalance)
+
+
+
+
+
+
+
+# Import all packages listed as Imports or Depends
+import(
+  ape,
+  cubature,
+  coda,
+  pbapply,
+  quantreg
+)
+
+importFrom("stats", "as.dendrogram", "coefficients", "dbinom", "dist",
+             "ecdf", "hclust", "optimize", "pnorm", "quantile", "rbeta",
+             "rexp", "rnorm", "rpois", "runif", "sigma", "uniroot",
+             "var")
+
+importFrom("graphics", "abline", "layout", "par", "plot", "text")
+
